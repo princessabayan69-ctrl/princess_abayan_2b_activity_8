@@ -1,0 +1,35 @@
+
+def kth_largest(numbers, k):
+    if k <= 0 or k > len(numbers):
+        return None
+
+    min_heap = MinHeap()
+
+    for number in numbers:
+        min_heap.insert(number)
+
+        if min_heap.size() > k:
+            min_heap.extract()
+
+    return min_heap.peek()
+
+
+print("ACTIVITY 4: KTH LARGEST")
+
+values = [3, 2, 1, 5, 6, 4]
+k = 2
+
+print("Numbers:", values)
+print("K:", k)
+print("Kth largest:", kth_largest(values, k))
+print("Check using sorting:", sorted(values, reverse=True)[k - 1])
+
+print()
+
+Output:
+ACTIVITY 4: KTH LARGEST
+Numbers: [3, 2, 1, 5, 6, 4]
+K: 2
+Kth largest: 5
+Check using sorting: 5
+
