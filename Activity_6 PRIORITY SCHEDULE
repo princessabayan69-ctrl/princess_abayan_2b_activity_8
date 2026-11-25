@@ -1,0 +1,26 @@
+def priority_scheduler(jobs):
+    priority_queue = MaxHeap()
+
+    for job in jobs:
+        priority_queue.insert(job)
+
+    release_order = []
+
+    while priority_queue.size() > 0:
+        job = priority_queue.extract()
+        release_order.append(job)
+
+    return release_order
+
+
+print("ACTIVITY 6: PRIORITY SCHEDULER")
+
+jobs = [30, 10, 50, 20, 40]
+
+print("Jobs:", jobs)
+print("Release order:", priority_scheduler(jobs))
+
+Output:
+ACTIVITY 6: PRIORITY SCHEDULER
+Jobs: [30, 10, 50, 20, 40]
+Release order: [50, 40, 30, 20, 10]
