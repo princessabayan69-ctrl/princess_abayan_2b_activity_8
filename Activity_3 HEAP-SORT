@@ -1,0 +1,31 @@
+def heap_sort(array):
+    max_heap = MaxHeap()
+
+    for number in array:
+        max_heap.insert(number)
+
+    result = []
+
+    while max_heap.size() > 0:
+        result.insert(0, max_heap.extract())
+
+    return result
+
+
+print("ACTIVITY 3: HEAP SORT")
+
+print(heap_sort([4, 10, 3, 5, 1]))
+print(heap_sort([1, 2, 3, 4, 5]))
+print(heap_sort([5, 4, 3, 2, 1]))
+print(heap_sort([4, 2, 4, 1, 2]))
+print(heap_sort([]))
+
+print()
+
+Output:
+ACTIVITY 3: HEAP SORT
+[1, 3, 4, 5, 10]
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+[1, 2, 2, 4, 4]
+[]
